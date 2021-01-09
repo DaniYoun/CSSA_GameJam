@@ -108,7 +108,16 @@ class ObstacleList extends Model {
 }
 
 //This class will control obstacle list every frame 
-class ObstacleListController extends Controller<ObstacleList> {
+class ObstacleListController extends Controller<ObstacleList> implements Listener {
+
+  //Is runner get blocked by obstacle
+  //True if runner is blocked by obstacle in x axis
+
+  boolean isCollide;
+
+  //If supporter cover all appearance of first obstacle
+  boolean isRemoveFirstObstacle;
+
   public ObstacleListController (ObstacleList list, Game game) {
     super(list);
   }
@@ -119,5 +128,37 @@ class ObstacleListController extends Controller<ObstacleList> {
    *           then remove the first obstacle if they overlap with the supporters mob
    */
   public update () {
+    if (isCollide) {
+      //TODO: keep the runner and obstacle separate
+    } else {
+      moveObstacles ();
+    };
+
+    if (isRemoveFirstObstacle) {
+      model.removeFirstObstacle ();
+    }
+  }
+
+  private void movesObstacles () {
+    float obstacleSpeed = game.gameSpeed;
+    model.moveX(Constants.LEFT, obstacleSpeed);
+  }
+
+  @Override
+    public void listen (int data) {
+    switch (data) {
+    case Listener.REMOVE_FIRST_OBSTALCE:
+      isRemoveFirstObstacle = true;
+      break;
+    case Listener.NOT_REMOVE_FIRST_OBSTACLE:
+      isRemoveFirstObstacle = false;
+      break;
+    case Listener.RUNNER_COLLIDE_OBSTACLE:
+      isCollide = true;
+      break;
+    case Listener.RUNNER_NOT_COLLIDE_OBSTACLE:
+      isCollide = false;
+      break;
+    }
   }
 }

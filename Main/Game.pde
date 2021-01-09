@@ -36,6 +36,9 @@ class Game extends Model {
 
 //This class will update, change game data every frame
 class GameController extends Controller<Game> {
+  
+  
+  
   public GameController (Game game) {
     super(game);
   }
@@ -76,19 +79,6 @@ class GameController extends Controller<Game> {
    */
   private void levelUp (Game game) {
     //TODO: level up game after a while SPEED_UP_INTERVAL
-  }
-}
-
-//This class will controll obstacle list
-//Checking if obstacle is over the screen and delete it
-//Adding new obstacle
-class ObstacleListController extends Controller<Game> {
-
-  public ObstacleListController (Game game) {
-    super(game);
-  }
-
-  public void update () {
   }
 }
 
