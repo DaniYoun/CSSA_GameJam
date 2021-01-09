@@ -11,5 +11,7 @@ class GameView extends View<Game> {
   public void draw () {
     background (100);
     obstaclesView.draw ();
+
+    //obstaclesView.draw ();
   }
 }

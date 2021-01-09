@@ -146,7 +146,6 @@ class ObstacleListController extends Controller<ObstacleList> implements Listene
   }
 }
 
-
 class ObstacleListView extends View<ObstacleList> {
 
   ObstacleView[] views;
