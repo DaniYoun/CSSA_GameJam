@@ -19,6 +19,7 @@ abstract class Controller<E extends Model> {
   abstract void update ();
 }
 
+
 //This class is the super class for all classes that contain game data, object data
 abstract class Model {
 
@@ -34,4 +35,29 @@ abstract class Model {
   float[] getPosition () {
     return this.position;
   }
+
+  /**
+   * @purpose  move the object horizontally 
+   *           by changing positionX
+   *
+   * @params   direction {int} left or right
+   * @params   distance {float} moving distance
+   */
+  public void moveX (int direction, float distance) {
+    float currentPositionX = this.position[Constants.X];
+    if (direction == Constants.LEFT) {
+      this.position[Constants.X] = currentPositionX - distance;
+    } else if (direction == RIGHT) {
+      this.position[Constants.X] = currentPositionX + distance;
+    }
+  }
+}
+
+
+class Constants {
+  public static final int X = 0;
+  public static final int Y = 0;
+
+  public static final LEFT = -1;
+  public static final RIGHT = 1;
 }
