@@ -19,7 +19,7 @@ class Game extends Model {
   
   int time;
   
-  
+  boolean isGameRunning;
   
   public Game () {
   }
@@ -33,7 +33,11 @@ class Game extends Model {
 
 //This class will update, change game data every frame
 class GameController extends Controller<Game> {
-  public void update (Game game) {
+  public GameController (Game game) {
+    super(game);
+  }
+  
+  public void update () {
     //TODO: add Checking collision between player and 
     movingObjects (game);
     
@@ -54,14 +58,24 @@ class GameController extends Controller<Game> {
 }
 
 //This class will controll obstacle list
+//Checking if obstacle is over the screen and delete it
+//Adding new obstacle
 class ObstacleListController extends Controller<Game> {
-  public void update (Game game) {
+  
+  public ObstacleListController (Game game) {
+    super(game);
+  }
+  
+  public void update () {
   }
 }
 
 //This class will initialize all data for the game 
 //Or reset data of the game back to beginning
 class GameStarter extends Controller<Game> {
-  public void update (Game game) {
+  public GameStarter (Game game) {
+    super(game);
+  }
+  public void update () {
   }
 }
