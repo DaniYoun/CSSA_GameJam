@@ -38,6 +38,8 @@ abstract class Model {
       this.position[Constants.X] = currentPositionX + distance;
     }
   }
+  
+  
 }
 
 //This class is the super class for all class has function of drawing objects
@@ -64,9 +66,16 @@ abstract class Controller<E extends Model> {
 
 //This class has the function of observing an event
 //Notify all other class if the event happens 
-interface Observer {
+abstract class Observer {
+  Arraylist<Listener> list;
+  public Observer () {
+    list = new Arraylist<Listener> () ;
+  }
+  
   public void notifyAllListener ();
-  public void addListener (Listener listener);
+  public void addListener (Listener listener) {
+    list.add(listener); 
+  }
 }
 
 //This class will be the listener waiting for the notify from observer
