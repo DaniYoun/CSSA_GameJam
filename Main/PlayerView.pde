@@ -10,4 +10,4 @@ class PlayerView extends View<Player> {
     float top = position[Constants.Y] - model.getheight ()/2;
     rect(left, top, model.getWidth (), model.getheight ());
   }
-}a
+}

@@ -2,9 +2,9 @@ class BulletView extends View<Bullet> {
   public BulletView (Bullet bullet) {
     super(bullet);
   }
-  
+
   public void setModel (Bullet bullet) {
-    this.mode = bullet;
+    this.model = bullet;
   }
 
   public void draw () {
@@ -17,12 +17,12 @@ class BulletView extends View<Bullet> {
 
 class BulletListView extends View<Game> {
   BulletView bulletView;
-  
+
   public BulletListView(Game game) {
     super(game); 
-    bulletView = new BulletView (0,0,0,0,0);
+    bulletView = new BulletView (0, 0, 0, 0, 0);
   }
-  
+
   public void draw () {
     for (Bullet bullet : game.bulletList) {
       bulletView.setMode(bullet);
