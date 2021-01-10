@@ -44,6 +44,17 @@ class Player extends Model {
     }
   }
   
+  boolean isJumping(){
+   boolean jumping  = false;
+   if(posY < jumpFloor && posY >= jumpCeil){
+     jumping = true;
+   }else{
+    jumping = false; 
+   }
+   
+   return jumping;
+  }
+  
   //Jumps when space is pressed
   void keyPressed(){
    if(key == 'SPACE'){
