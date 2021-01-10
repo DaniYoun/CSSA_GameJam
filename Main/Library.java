@@ -1,3 +1,4 @@
+import java.util.*;
 
 class Constants {
   public static final int X = 0;
@@ -39,7 +40,6 @@ abstract class Model {
     }
   }
   
-  
 }
 
 //This class is the super class for all class has function of drawing objects
@@ -67,12 +67,12 @@ abstract class Controller<E extends Model> {
 //This class has the function of observing an event
 //Notify all other class if the event happens 
 abstract class Observer {
-  Arraylist<Listener> list;
+  ArrayList<Listener> list;
   public Observer () {
-    list = new Arraylist<Listener> () ;
+    list = new ArrayList<Listener> () ;
   }
   
-  public void notifyAllListener ();
+  public abstract void notifyAllListener ();
   public void addListener (Listener listener) {
     list.add(listener); 
   }
@@ -80,7 +80,7 @@ abstract class Observer {
 
 //This class will be the listener waiting for the notify from observer
 interface Listener {
-  public static final int REMOVE_FIRST_OBSTALCE = 1;
+  public static final int REMOVE_FIRST_OBSTACLE = 1;
   public static final int NOT_REMOVE_FIRST_OBSTACLE = 2;
   public static final int RUNNER_COLLIDE_OBSTACLE = 3;
   public static final int RUNNER_NOT_COLLIDE_OBSTACLE = 4;

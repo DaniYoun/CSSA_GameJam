@@ -130,7 +130,7 @@ class ObstacleListController extends Controller<ObstacleList> implements Listene
   @Override
     public void listen (int data) {
     switch (data) {
-    case Listener.REMOVE_FIRST_OBSTALCE:
+    case Listener.REMOVE_FIRST_OBSTACLE:
       isRemoveFirstObstacle = true;
       break;
     case Listener.NOT_REMOVE_FIRST_OBSTACLE:
