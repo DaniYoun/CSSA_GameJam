@@ -43,9 +43,9 @@ class Player extends Model {
   }
   
   //Jumps when space is pressed
-  void keyPressed(){
-   if(key == 'SPACE'){
-    jump(); 
-   }
-  }
+  //void keyPressed(){
+  // if(key == 'SPACE'){
+  //  jump(); 
+  // }
+  //}
 }
