@@ -69,6 +69,10 @@ class Player extends Model {
    }
   }
   
+  float getPlayerX(){
+   return posX; 
+  }
+  
   float getHeight(){
    return pHeight; 
   }
