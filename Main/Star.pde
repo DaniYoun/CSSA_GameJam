@@ -20,14 +20,3 @@ class Star extends Model {
   }
   
 }
-
-class StarView extends View<Star> {
-
-  public StarView (Star star) {
-     super(star); 
-  }
-  
-  public void draw () {
-    
-  }
-}

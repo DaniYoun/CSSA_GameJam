@@ -56,6 +56,13 @@ class Player extends Model {
   }
   
   //Jumps when space is pressed
+<<<<<<< HEAD
+  //void keyPressed(){
+  // if(key == 'SPACE'){
+  //  jump(); 
+  // }
+  //}
+=======
   void keyPressed(){
    if(key == 'SPACE'){
     jump(); 
@@ -69,4 +76,5 @@ class Player extends Model {
   float getWidth(){
    return pWidth; 
   }
+>>>>>>> e52963d99bbf5107cdb5b584bf1ce0b3241ae8cd
 }

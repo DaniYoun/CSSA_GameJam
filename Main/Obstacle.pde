@@ -34,7 +34,7 @@ class ObstacleView extends View<Obstacle> {
 
   public void draw () {
     model = list.getObstacle(obstacleIndex);
-    
+
     float[] position = model.getPosition();
     float left = position[Constants.X] - model.obstacleWidth/2;
     float top = position[Constants.Y] - model.obstacleHeight/2;

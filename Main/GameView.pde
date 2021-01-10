@@ -2,10 +2,10 @@
 class GameView extends View<Game> {  
   ObstacleListView obstaclesView;
   SupporterView supporterView;
-  
+
   public GameView (Game game) {
     super(game);
-    
+
     obstaclesView = new ObstacleListView (model.obstacles);
     supporterView = new SupporterView (model.supporter);
   }

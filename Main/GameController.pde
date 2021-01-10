@@ -4,7 +4,7 @@ class GameController extends Controller<Game> {
 
   ObstacleListController obstaclesController;
   SupporterController supporterController;
-  
+
   SupporterObstacleObserver supporterObstacleObserver;
 
   public GameController (Game game) {
@@ -12,19 +12,19 @@ class GameController extends Controller<Game> {
 
     obstaclesController = new ObstacleListController(game.obstacles, game);
     supporterController = new SupporterController (game.supporter, game);
-    
+
     supporterObstacleObserver = new SupporterObstacleObserver(game.supporter, game.obstacles);
     supporterObstacleObserver.addListener(obstaclesController);
   }
 
   public void update () {
     //TODO: add checking if the player hit the supporter aka hitpoint behind
-    
+
     supporterObstacleObserver.notifyAllListener ();
-    
+
     obstaclesController.update ();
     supporterController.update ();
-    
+
     levelUp (game);
     //TODO: add Checking collision between bullet and star
   }

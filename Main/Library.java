@@ -39,7 +39,6 @@ abstract class Model {
       this.position[Constants.X] = currentPositionX + distance;
     }
   }
-  
 }
 
 //This class is the super class for all class has function of drawing objects
@@ -71,10 +70,10 @@ abstract class Observer {
   public Observer () {
     list = new ArrayList<Listener> () ;
   }
-  
+
   public abstract void notifyAllListener ();
   public void addListener (Listener listener) {
-    list.add(listener); 
+    list.add(listener);
   }
 }
 
