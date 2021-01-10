@@ -15,9 +15,9 @@ class BulletCollision{
     for(Bullet bullet : bullets){
       for(Star star : stars)
       {
-         float distance = sqrt((bullet.x - star.position[0]) * (bullet.x - star.position[0]) - (bullet.y - star.position[1]) * (bullet.y - star.position[1])) 
+         //float distance = sqrt((bullet.x - star.position[0]) * (bullet.x - star.position[0]) - (bullet.y - star.position[1]) * (bullet.y - star.position[1]))
          
-         float totalSize = bullet.size + star.
+         //float totalSize = bullet.size + star.
       }
     }
   
