@@ -13,8 +13,10 @@ class Game extends Model {
 
   boolean isGameRunning;
 
+  //Game objects
   ObstacleList obstacles;
-
+  Supporter supporter;
+  
   public Game () {
     initGame ();
   }
@@ -24,6 +26,7 @@ class Game extends Model {
     time = 0;
     
     obstacles = new ObstacleList ();
+    supporter = new Supporter (new float [] {0, height-150});
   }
 
   public float[] getPosition () {
