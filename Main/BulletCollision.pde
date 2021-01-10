@@ -1,7 +1,7 @@
 class BulletCollision{
   private ArrayList<Bullet> bullets;
   private ArrayList<Star> stars;
-  float starSize = 50;
+  //float starSize = 50;
   
   BulletCollision(ArrayList<Bullet> bullets,ArrayList<Star> stars){
     this.bullets = bullets;
@@ -18,7 +18,7 @@ class BulletCollision{
       {
          float distance = sqrt((bullet.x - star.position[0]) * (bullet.x - star.position[0]) - (bullet.y - star.position[1]) * (bullet.y - star.position[1])) 
          
-         float totalSize = bullet.size + starSize;
+         float totalSize = bullet.size + star.getSize();;
          
          if(distance < totalSize){
            removedBullet.add(bullet);

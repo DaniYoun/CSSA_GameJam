@@ -7,7 +7,9 @@ class Player extends Model {
   //Size of the runner, also used for collision
   //jumping speed of the runner
   float speed  = 64;
-  float size = 20;
+  float size = 64;
+  private float pHeight = size;
+  private float pWidth = size;
   float jumpSpeed = 0.7;
   float jumpCeil = 400; // highest jump from the center of the model
   final float jumpFloor = posY; // Initial position of the model
@@ -47,5 +49,13 @@ class Player extends Model {
    if(key == 'SPACE'){
     jump(); 
    }
+  }
+  
+  float getHeight(){
+   return pHeight; 
+  }
+  
+  float getWidth(){
+   return pWidth; 
   }
 }
